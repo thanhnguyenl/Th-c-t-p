@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Doan.Models.Nhanvien>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form asp-action="NhanviensByKeyWord">
+    <div class="row">
+        <div class="col"><input type="text" name="keyword" class="form-control" /></div>
+        <div class="col"><input type="submit" value="Tìm" class="btn btn-info" /></div>
+    </div>
+</form>
+
+<h3>DANH SÁCH NHÂN VIÊN</h3>
+
+<p>
+    <a asp-action="Create">Thêm mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaLoaiKcb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaKhoa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaBhxh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoTen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Macchn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaCskcbNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+@foreach (var item in Model) {
+    if (@ViewBag.taikhoan.MaCskcb == @item.MaCskcbNavigation.MaCskcb)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaLoaiKcb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaKhoa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaBhxh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Macchn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaCskcbNavigation.MaCskcb)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Stt">Chỉnh sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.Stt">Chi tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.Stt">Xóa</a>
+            </td>
+        </tr>
+    }
+        
+}
+    </tbody>
+</table>

@@ -1,0 +1,58 @@
+﻿@model Doan.Models.Nhanvien
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h3>CHỈNH SỬA THÔNG TIN NHÂN VIÊN</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Stt" />
+            <div class="form-group">
+                <label asp-for="MaLoaiKcb" class="control-label"></label>
+                <input asp-for="MaLoaiKcb" class="form-control" />
+                <span asp-validation-for="MaLoaiKcb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaKhoa" class="control-label"></label>
+                <input asp-for="MaKhoa" class="form-control" />
+                <span asp-validation-for="MaKhoa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaBhxh" class="control-label"></label>
+                <input asp-for="MaBhxh" class="form-control" />
+                <span asp-validation-for="MaBhxh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoTen" class="control-label"></label>
+                <input asp-for="HoTen" class="form-control" />
+                <span asp-validation-for="HoTen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Macchn" class="control-label"></label>
+                <input asp-for="Macchn" class="form-control" />
+                <span asp-validation-for="Macchn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaCskcb" class="control-label"></label>
+                <select asp-for="MaCskcb" class="form-control" asp-items="ViewBag.MaCskcb"></select>
+                <span asp-validation-for="MaCskcb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Quay lại danh sách</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

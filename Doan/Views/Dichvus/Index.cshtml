@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Doan.Models.Dichvu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form asp-action="DichvusByKeyWord">
+    <div class="row">
+        <div class="col"><input type="text" name="keyword" class="form-control" /></div>
+        <div class="col"><input type="submit" value="Tìm" class="btn btn-info" /></div>
+    </div>
+</form>
+
+<h3>DANH SÁCH DỊCH VỤ KỸ THUẬT</h3>
+
+<p>
+    <a asp-action="Create">Thêm mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaDichVu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenDichVu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuyTrinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CskcbCgkt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CskcbCls)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaCskcbNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    if (@ViewBag.taikhoan.MaCskcb == @item.MaCskcbNavigation.MaCskcb)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaDichVu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenDichVu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuyTrinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CskcbCgkt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CskcbCls)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaCskcbNavigation.MaCskcb)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Stt">Chỉnh sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.Stt">Chi tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.Stt">Xóa</a>
+            </td>
+        </tr>
+    }
+}
+    </tbody>
+</table>

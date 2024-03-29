@@ -1,0 +1,245 @@
+﻿@model IEnumerable<Doan.Models.Thuoc>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form asp-action="ThuocsByKeyWord">
+    <div class="row">
+        <div class="col"><input type="text" name="keyword" class="form-control" /></div>
+        <div class="col"><input type="submit" value="Tìm" class="btn btn-info" /></div>
+    </div>
+</form>
+
+<h3>DANH SÁCH THUỐC</h3>
+
+<p>
+    <a asp-action="Create">Thêm mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaThuoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenHoatChat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenThuoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonViTinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HamLuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DuongLuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaDuongLuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DangBaoChe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoDangKy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoLuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonGiaBh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuyCach)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NhaSx)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NuocSx)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NhaThau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TtThau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TuNgay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DenNgay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoaiThuoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoaiThau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HtThau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaDvkt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tccl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BoPhanVt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenKhoaHoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NguonGoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PpChebien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaDlNhap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaDlCb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaTlhhCb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TlhhBq)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaCskcbNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            if (@ViewBag.taikhoan.MaCskcb == @item.MaCskcbNavigation.MaCskcb)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaThuoc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenHoatChat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenThuoc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonViTinh)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HamLuong)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DuongLuong)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaDuongLuong)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DangBaoChe)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoDangKy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoLuong)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonGia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonGiaBh)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QuyCach)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NhaSx)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NuocSx)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NhaThau)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TtThau)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TuNgay)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DenNgay)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LoaiThuoc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LoaiThau)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HtThau)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaDvkt)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tccl)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BoPhanVt)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenKhoaHoc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NguonGoc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PpChebien)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaDlNhap)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaDlCb)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaTlhhCb)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TlhhBq)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MaCskcbNavigation.MaCskcb)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Stt">Chỉnh sửa</a> |
+                        <a asp-action="Details" asp-route-id="@item.Stt">Chi tiết</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Stt">Xóa</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

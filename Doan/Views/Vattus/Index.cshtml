@@ -1,0 +1,165 @@
+﻿@model IEnumerable<Doan.Models.Vattu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form asp-action="VattusByKeyWord">
+    <div class="row">
+        <div class="col"><input type="text" name="keyword" class="form-control" /></div>
+        <div class="col"><input type="submit" value="Tìm" class="btn btn-info" /></div>
+    </div>
+</form>
+
+<h3>DANH SÁCH VẬT TƯ  Y TẾ</h3>
+
+<p>
+    <a asp-action="Create">Thêm mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaVatTu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NhomVatTu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenVatTu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaHieu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuyCach)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HangSx)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NuocSx)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonViTinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonGiaBh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TyleTtBh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoLuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DanhMuc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NhaThau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TtThau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TuNgay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DenNgay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoaiThau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HtThau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaCskcbNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    if (@ViewBag.taikhoan.MaCskcb == @item.MaCskcbNavigation.MaCskcb)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaVatTu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NhomVatTu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenVatTu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaHieu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuyCach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HangSx)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NuocSx)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonViTinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGiaBh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TyleTtBh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DanhMuc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NhaThau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TtThau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TuNgay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DenNgay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoaiThau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HtThau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaCskcbNavigation.MaCskcb)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Stt">Chỉnh sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.Stt">Chi tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.Stt">Xóa</a>
+            </td>
+        </tr>
+    }
+}
+    </tbody>
+</table>

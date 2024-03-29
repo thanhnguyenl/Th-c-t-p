@@ -1,0 +1,133 @@
+﻿@model Doan.Models.Vattu
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h3>CHỈNH SỬA THÔNG TIN VẬT TƯ Y TẾ</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Stt" />
+            <div class="form-group">
+                <label asp-for="MaVatTu" class="control-label"></label>
+                <input asp-for="MaVatTu" class="form-control" />
+                <span asp-validation-for="MaVatTu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NhomVatTu" class="control-label"></label>
+                <input asp-for="NhomVatTu" class="form-control" />
+                <span asp-validation-for="NhomVatTu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenVatTu" class="control-label"></label>
+                <input asp-for="TenVatTu" class="form-control" />
+                <span asp-validation-for="TenVatTu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaHieu" class="control-label"></label>
+                <input asp-for="MaHieu" class="form-control" />
+                <span asp-validation-for="MaHieu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuyCach" class="control-label"></label>
+                <input asp-for="QuyCach" class="form-control" />
+                <span asp-validation-for="QuyCach" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HangSx" class="control-label"></label>
+                <input asp-for="HangSx" class="form-control" />
+                <span asp-validation-for="HangSx" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NuocSx" class="control-label"></label>
+                <input asp-for="NuocSx" class="form-control" />
+                <span asp-validation-for="NuocSx" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonViTinh" class="control-label"></label>
+                <input asp-for="DonViTinh" class="form-control" />
+                <span asp-validation-for="DonViTinh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonGia" class="control-label"></label>
+                <input asp-for="DonGia" class="form-control" />
+                <span asp-validation-for="DonGia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DonGiaBh" class="control-label"></label>
+                <input asp-for="DonGiaBh" class="form-control" />
+                <span asp-validation-for="DonGiaBh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TyleTtBh" class="control-label"></label>
+                <input asp-for="TyleTtBh" class="form-control" />
+                <span asp-validation-for="TyleTtBh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoLuong" class="control-label"></label>
+                <input asp-for="SoLuong" class="form-control" />
+                <span asp-validation-for="SoLuong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DanhMuc" class="control-label"></label>
+                <input asp-for="DanhMuc" class="form-control" />
+                <span asp-validation-for="DanhMuc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NhaThau" class="control-label"></label>
+                <input asp-for="NhaThau" class="form-control" />
+                <span asp-validation-for="NhaThau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TtThau" class="control-label"></label>
+                <input asp-for="TtThau" class="form-control" />
+                <span asp-validation-for="TtThau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TuNgay" class="control-label"></label>
+                <input asp-for="TuNgay" class="form-control" />
+                <span asp-validation-for="TuNgay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DenNgay" class="control-label"></label>
+                <input asp-for="DenNgay" class="form-control" />
+                <span asp-validation-for="DenNgay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaCskcb" class="control-label"></label>
+                <select asp-for="MaCskcb" class="form-control" asp-items="ViewBag.MaCskcb"></select>
+                <span asp-validation-for="MaCskcb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LoaiThau" class="control-label"></label>
+                <input asp-for="LoaiThau" class="form-control" />
+                <span asp-validation-for="LoaiThau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HtThau" class="control-label"></label>
+                <input asp-for="HtThau" class="form-control" />
+                <span asp-validation-for="HtThau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Quay lại danh sách</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

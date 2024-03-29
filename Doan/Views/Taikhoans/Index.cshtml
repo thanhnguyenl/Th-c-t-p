@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Doan.Models.Cskcb>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form asp-action="TaikhoansByKeyWord">
+    <div class="row">
+        <div class="col"><input type="text" name="keyword" class="form-control" /></div>
+        <div class="col"><input type="submit" value="Tìm" class="btn btn-info" /></div>
+    </div>
+</form>
+
+<h3>DANH SÁCH TÀI KHOẢN</h3>
+
+<p>
+    <a asp-action="Create">Thêm mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Stt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaiKhoan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatKhau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaCskcb)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaiKhoan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatKhau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaCskcb)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MaCskcb">Chỉnh sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.MaCskcb">Chi tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaCskcb">Xóa</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
